@@ -1,4 +1,3 @@
-// index_cjs.ts
 // 課題: CommonJS形式でのインポートを体験する
 
 // CommonJSスタイルでのインポート
