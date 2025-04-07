@@ -14,7 +14,7 @@ function processValue(value: number | string): string {
   // ここにコードを実装してください
   // ヒント: typeof value === "number" の形で型を判定できます
 
-  return "";
+  return ""; // TODO: 実装を置き換える
 }
 
 // テスト
