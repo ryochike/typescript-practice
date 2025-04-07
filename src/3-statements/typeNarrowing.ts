@@ -14,12 +14,7 @@ function processValue(value: number | string): string {
   // ここにコードを実装してください
   // ヒント: typeof value === "number" の形で型を判定できます
 
-  if (typeof value === "number") {
-    // このブロック内では value は number型として扱われる
-    return `Squared: ${value * value}`;
-  }
-  // このブロック内では value は string型として扱われる
-  return `Length: ${value.length}`;
+  return "";
 }
 
 // テスト
@@ -27,7 +22,7 @@ console.log(processValue(5)); // "Squared: 25" と出力されるはずです
 console.log(processValue("Hello")); // "Length: 5" と出力されるはずです
 
 /**
- * 課題2: より複雑な型ナロイングを体験してみましょう
+ * より複雑な型ナロイングを体験してみましょう
  * 判別可能なユニオン型（Discriminated Union）を使用します
  *
  * 以下の型定義は、「共通のプロパティ（kind）で型を区別できる」
@@ -51,7 +46,7 @@ type Rectangle = {
 type Shape = Circle | Rectangle;
 
 /**
- * 課題3: 図形の面積を計算する関数を実装してください
+ * 課題2: 図形の面積を計算する関数を実装してください
  * - Circle: π × radius²
  * - Rectangle: width × height
  *
@@ -64,21 +59,7 @@ function calculateArea(shape: Shape): number {
   // ここにコードを実装してください
   // switch文を使ってshape.kindで分岐し、適切な計算を行いましょう
 
-  switch (shape.kind) {
-    case "circle":
-      // このケース内では shape は Circle型として扱われる
-      return Math.PI * shape.radius ** 2;
-    case "rectangle":
-      // このケース内では shape は Rectangle型として扱われる
-      return shape.width * shape.height;
-    default: {
-      // exhaustive check（網羅性チェック）
-      // Shape型に新しい種類の図形が追加された場合、
-      // ここでコンパイルエラーが発生し、実装漏れを防げます
-      const _exhaustiveCheck: never = shape;
-      return _exhaustiveCheck;
-    }
-  }
+  return 0; // TODO: 適切な実装に置き換えてください
 }
 
 // テスト用オブジェクト

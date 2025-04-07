@@ -123,9 +123,9 @@ console.log(`Rectangle area: ${calculateArea(rectangle)}`); // 24 が期待値
   ```ts
   switch (shape.kind) {
     case "circle":
-      return Math.PI * shape.radius ** 2;
+      return 0;
     case "rectangle":
-      return shape.width * shape.height;
+      return 0;
     default:
       // ここに来るならShapeの型定義に漏れがあるはず → コンパイル時エラーにできる
       const exhaustiveCheck: never = shape;
