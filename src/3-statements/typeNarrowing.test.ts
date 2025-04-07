@@ -116,7 +116,7 @@ describe("型ナロイングとユニオン型 - 課題", () => {
     }
   });
 
-  it("課題3: calculateArea関数が正しく実装されていること", () => {
+  it("課題2: calculateArea関数が正しく実装されていること", () => {
     const result = evaluateTypeNarrowingTs();
     expect(result.hasCalculateAreaFunction).toBe(true);
     expect(result.hasSwitchStatement).toBe(true);
