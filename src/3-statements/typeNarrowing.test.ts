@@ -43,20 +43,20 @@ describe("型ナロイングとユニオン型 - 課題", () => {
         // processValue関数の実装チェック
         hasProcessValueFunction:
           /function\s+processValue\s*\(\s*value\s*:\s*number\s*\|\s*string\s*\)\s*:\s*string/.test(
-            fileContent
+            fileContent,
           ),
         hasTypeofCheck: /typeof\s+value\s*===?\s*['"]number['"]/.test(
-          fileContent
+          fileContent,
         ),
         // calculateArea関数の実装チェック
         hasCalculateAreaFunction:
           /function\s+calculateArea\s*\(\s*shape\s*:\s*Shape\s*\)\s*:\s*number/.test(
-            fileContent
+            fileContent,
           ),
         hasSwitchStatement:
           /switch\s*\(\s*shape\.kind\s*\)/.test(fileContent) ||
           /if\s*\(\s*shape\.kind\s*===?\s*['"]circle['"]\s*\)/.test(
-            fileContent
+            fileContent,
           ),
         // 発展課題のチェック（任意）
         hasTriangleType: /type\s+Triangle\s*=/.test(fileContent),
@@ -78,7 +78,7 @@ describe("型ナロイングとユニオン型 - 課題", () => {
     try {
       // TypeScriptファイルをトランスパイルして実行
       execSync(
-        `npx tsc ${filePath} --outFile ${filePath.replace(".ts", ".temp.js")}`
+        `npx tsc ${filePath} --outFile ${filePath.replace(".ts", ".temp.js")}`,
       );
 
       // 実行して出力をキャプチャ
@@ -130,11 +130,11 @@ describe("型ナロイングとユニオン型 - 課題", () => {
       expect(
         logOutput.some(
           (log) =>
-            log.includes("Circle area:") && log.includes("78.53981633974483")
-        )
+            log.includes("Circle area:") && log.includes("78.53981633974483"),
+        ),
       ).toBe(true);
       expect(logOutput.some((log) => log.includes("Rectangle area: 24"))).toBe(
-        true
+        true,
       );
     }
   });
